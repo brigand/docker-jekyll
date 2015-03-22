@@ -5,7 +5,9 @@ RUN apk update \
   && gem install nokogiri -- --use-system-libraries -N \
   && gem install jekyll -N \
   && gem install github-pages -N \
-  && apk del --purge libgcc gcc make libc-dev libffi-dev zlib-dev libxml2-dev libxslt-dev
+  && apk del --purge ruby-dev \
+                     libgcc gcc make libc-dev libffi-dev zlib-dev libxml2-dev libxslt-dev \
+  && apk add ruby-json
 RUN mkdir /usr/ws
 WORKDIR /usr/ws
 CMD ["echo", "This container has no default action."]
