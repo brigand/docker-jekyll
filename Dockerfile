@@ -1,4 +1,4 @@
-FROM ruby
+FROM brigand/ruby
 RUN apk update \
   && apk add ruby-dev libpq libgcc ca-certificates make gcc libc-dev libffi-dev \
              nodejs 'python<3' zlib-dev libxml2 libxml2-dev libxslt libxslt-dev \
